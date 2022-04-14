@@ -42,6 +42,7 @@ public class TestController {
         arrayList.add(array1);
         arrayList.add(array2);
         arrayList.add(array3);
+        System.out.println();
         arrayList.add(array4);
         arrayList.add(array5);
         Map<Integer, List<int[]>> collect = arrayList.stream().collect(Collectors.groupingBy(item -> item.length));
