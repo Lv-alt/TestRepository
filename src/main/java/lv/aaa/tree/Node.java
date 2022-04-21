@@ -11,7 +11,26 @@ public class Node {
     private String name;
     private Node left;
     private Node right;
-    public Node(int num,String name){
+    private int leftType;
+    private int rightType;
+
+    public int getRightType() {
+        return rightType;
+    }
+
+    public void setRightType(Integer rightType) {
+        this.rightType = rightType;
+    }
+
+    public int getLeftType() {
+        return leftType;
+    }
+
+    public void setLeftType(Integer leftType) {
+        this.leftType = leftType;
+    }
+
+    public Node(int num, String name){
         this.num = num;
         this.name = name;
     }

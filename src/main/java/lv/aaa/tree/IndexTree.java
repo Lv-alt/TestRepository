@@ -26,12 +26,33 @@ public class IndexTree {
         binaryTree(root.getLeft());
         if(root.getLeft() == null){
             root.setLeft(pre);
+            root.setLeftType(1);
         }
         if(pre != null && pre.getRight() == null){
             pre.setRight(root);
+            pre.setRightType(1);
         }
         pre = root;
         binaryTree(root.getRight());
+    }
+
+    /**
+     * 线索化中序遍历
+     */
+    public void printNode(){
+        Node templateNode = rootNode;
+        while(templateNode != null){
+            //定位到最左叶子节点
+            while(templateNode.getLeftType() == 0){
+                templateNode = templateNode.getLeft();
+            }
+            System.out.println(templateNode.getNum());
+            while(templateNode.getRightType() == 1){
+                templateNode = templateNode.getRight();
+                System.out.println(templateNode.getNum());
+            }
+            templateNode = templateNode.getRight();
+        }
     }
     
 }

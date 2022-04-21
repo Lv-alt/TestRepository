@@ -20,8 +20,7 @@ public class Test {
         IndexTree tree = new IndexTree(root);
         tree.binaryTree();
 
-        System.out.println(node5.getLeft().getNum());
-        System.out.println(node5.getRight().getNum());
         
+        tree.printNode();
     }
 }
