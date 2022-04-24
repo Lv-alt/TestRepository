@@ -13,8 +13,8 @@ import java.util.stream.Collectors;
 public class StringNotRepeatMax {
 
     public static void main(String[] args) {
-        String s = "abcabcbb";
-        lengthOfLongestSubstring(s);
+        int i = 10;
+        System.out.println(i << 1);
     }
     public static int lengthOfLongestSubstring(String s) {
         String[] targetChars = s.split("");
