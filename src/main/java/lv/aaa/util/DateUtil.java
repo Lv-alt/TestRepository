@@ -9,6 +9,8 @@ import com.alibaba.fastjson.JSON;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -560,5 +562,19 @@ public class DateUtil {
             int second = calendar.get(13);
             return minute == 0 && second == 0;
         }
+    }
+
+    /**
+     * 获取上个最后一天的时分秒
+     * @param date
+     */
+    public static void getUpMonthLastDayHms(Date date) {
+        LocalDateTime expriyDate = LocalDateUtils.convertToLocalDateTime(date);
+        expriyDate = expriyDate.plusMonths(-1);
+        expriyDate = expriyDate.with(TemporalAdjusters.lastDayOfMonth());
+        expriyDate = expriyDate.withHour(23);
+        expriyDate = expriyDate.withMinute(59);
+        expriyDate = expriyDate.withSecond(59);
+        System.out.println(expriyDate.toString());
     }
 }
