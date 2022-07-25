@@ -1,5 +1,7 @@
 package lv.aaa.tree;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * 二叉排序树
  *
@@ -8,8 +10,12 @@ package lv.aaa.tree;
  */
 public class TwoSortTree {
     public static void main(String[] args) {
-        int[] arr = {4,3,6,5,7,8};
-        builderTree(arr);
+        String version = "V3";
+        String channelSource = "mfzt_zt69_365";
+        if (StringUtils.containsAny(channelSource, "zjx-slj-MF3-BC39")) {
+            System.out.println("true");
+            return;
+        }
     }
 
     /**

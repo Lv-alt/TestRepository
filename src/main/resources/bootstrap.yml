@@ -1,0 +1,17 @@
+executor:
+  core_count: 3
+  max_count: 5
+  time_out: 5
+
+spring:
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      config:
+        username: nacos
+        password: nacos
+        file-extension: yaml
+  application:
+    name: test-application
+  profiles:
+    active: dev
